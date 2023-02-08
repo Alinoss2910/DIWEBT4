@@ -1,5 +1,9 @@
-details > summary, details > p {
-    width: 10%;
-    border: 1px solid black;
-    font-weight: bold;
-}
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2s;
+  }
+  
+  details[open] .content {
+    max-height: 100px;
+  }
