@@ -1,0 +1,25 @@
+.button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+    background-color: green;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px grey;
+  }
+  .button:hover {background-color: darkgreen}
+  
+  .button:active {
+    background-color: darkgreen;
+    box-shadow: 0 5px darkgray;
+    transform: translateY(4px);
+  }
+  
+  .si {
+    color: blue;
+  }
+  
+  .no {
+    color: red;
+  }
