@@ -1,0 +1,83 @@
+#principal{
+    float: left;
+    column-count: 3;
+    display: inline;
+    width: 100%;
+}
+
+.pok {
+  position: relative;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.pok img {
+  width: 40%;
+  transition: width 2s;
+}
+
+.pok img:hover {
+  width: 35%;
+  height: 35%;
+}
+
+.pok p{
+  font-weight: bold;
+}
+
+.pok button{
+  position: static;
+  background-color: black;
+  color: white;
+}
+
+#main-banner img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+	#principal{
+    float: left;
+    column-count: 1;
+    display: inline;
+    width: 100%;
+  }
+}
+
+#main-banner {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    animation: banner-animation 10s ease-in-out infinite;
+  }
+  
+  @keyframes banner-animation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  #css {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  .radioG {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .cambioColor {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+  }
