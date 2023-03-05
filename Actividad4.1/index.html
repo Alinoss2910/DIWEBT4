@@ -7,15 +7,53 @@
     <title>Dialog</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/2zUJAUJZuiU"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    ></iframe>
+    <h1>Formulario de ejemplo</h1>
+    <form>
+      <fieldset>
+        <legend>Datos personales</legend>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required>
+          <option value="">Seleccione un país</option>
+          <option value="es">España</option>
+          <option value="mx">México</option>
+          <option value="ar">Argentina</option>
+        </select>
+        <label for="genero">Género:</label>
+        <label for="masculino">
+          <input type="radio" id="femenino" name="genero" value="femenino" />
+          Masculino
+        </label>
+        
+        <label for="femenino">
+          <input type="radio" id="otro" name="genero" value="otro" />
+          Femenino
+        </label>
+        
+        <label for="otro">Otro</label>
+      </fieldset>
+      <fieldset>
+        <legend>Preferencias</legend>
+        <label for="colores">Colores favoritos:</label>
+        <label for="rojo">
+          <input type="checkbox" id="rojo" name="colores[]" value="rojo" />
+          Rojo
+        </label>
+        <label for="azul">
+          <input type="checkbox" id="azul" name="colores[]" value="azul" />
+          Azul
+        </label>
+        <label for="verde">
+          <input type="checkbox" id="verde" name="colores[]" value="verde" />
+          Verde
+        </label>
+      </fieldset>
+      <input type="submit" value="Enviar" />
+    </form>
   </body>
 </html>

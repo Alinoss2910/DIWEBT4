@@ -4,17 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botones</title>
+    <title>Actividad 4.2</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script>
+        $(document).ready(function() {
+            // Configuración
+            var tiempoTransicion = 1000; // Tiempo de duración de la transición en milisegundos
+            var $imagenes = $('.carousel-images li'); // Obtener todas las imágenes del carrusel
+            var cantidadImagenes = $imagenes.length;
+            var indiceImagenActual = 0;
+
+            // Función para cambiar de imagen
+            function cambiarImagen() {
+                // Ocultar imagen actual
+                $imagenes.eq(indiceImagenActual).removeClass('active');
+
+                // Calcular índice de la siguiente imagen
+                indiceImagenActual++;
+                if (indiceImagenActual >= cantidadImagenes) {
+                    indiceImagenActual = 0;
+                }
+
+                // Mostrar siguiente imagen
+                $imagenes.eq(indiceImagenActual).addClass('active');
+            }
+
+            // Iniciar carrusel
+            $imagenes.eq(indiceImagenActual).addClass('active');
+
+            // Manejar botones prev y next
+            $('.carousel-prev').click(function() {
+                // Ocultar imagen actual
+                $imagenes.eq(indiceImagenActual).removeClass('active');
+
+                // Calcular índice de la imagen anterior
+                indiceImagenActual--;
+                if (indiceImagenActual < 0) {
+                    indiceImagenActual = cantidadImagenes - 1;
+                }
+
+                // Mostrar imagen anterior
+                $imagenes.eq(indiceImagenActual).addClass('active');
+            });
+
+            $('.carousel-next').click(function() {
+                // Ocultar imagen actual
+                $imagenes.eq(indiceImagenActual).removeClass('active');
+
+                // Calcular índice de la siguiente imagen
+                indiceImagenActual++;
+                if (indiceImagenActual >= cantidadImagenes) {
+                    indiceImagenActual = 0;
+                }
+
+                // Mostrar siguiente imagen
+                $imagenes.eq(indiceImagenActual).addClass('active');
+            });
+        });
+    </script>
 </head>
 <body>
-    <div>
-        <input type="text" onblur="alerta()">
+    <div class="container">
+        <header>
+            <img id="banner" src="img/banner.jpg" alt="">
+        </header>
+
+        <div class="botones">
+            <button>Seúl 1988</button>
+            <button>Barcelona 1992</button>
+            <button>Atlanta 1996</button>
+            <button>Sídney 2000</button>
+            <button>Atenas 2004</button>
+            <button>Pekín 2008</button>
+            <button>Londres 2012</button>
+            <button>Rio 2016</button>
+        </div>
+
+        <div class="carousel">
+            <ul class="carousel-images">
+               <li><img src="img/atenas.png"></li>
+               <li><img src="img/atlanta.png"></li>
+               <li><img src="img/barcelona.png"></li>
+            </ul>
+            <button class="carousel-prev">Anterior</button>
+            <button class="carousel-next">Siguiente</button>
+        </div>
+
+        <div id="mini">
+            <img class="miniatura" src="img/atenas.png" alt="">
+            <img class="miniatura" src="img/atlanta.png" alt="">
+            <img class="miniatura" src="img/barcelona.png" alt="">
+            <img class="miniatura" src="img/londres.png" alt="">
+            <img class="miniatura" src="img/pekin.png" alt="">
+            <img class="miniatura" src="img/rio.png" alt="">
+            <img class="miniatura" src="img/seul.png" alt="">
+            <img class="miniatura" src="img/sydney.png" alt="">
+        </div>
+         
+        <footer>Este el el footer de la página de las olimpiadas</footer>
     </div>
-    <script>
-        function alerta() {
-            alert("Blur")
-        }
-    </script>
 </body>
 </html>
